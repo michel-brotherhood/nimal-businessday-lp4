@@ -10,13 +10,11 @@ import mc33Equipment from "@/assets/mc33-zebra.webp";
 import aguasDoRioLogo from "@/assets/aguas-do-rio-logo.webp";
 import zq521Equipment from "@/assets/zq521-zebra.webp";
 import vibraLogo from "@/assets/vibra-logo.png";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
 
 const Evolution = () => {
-  const { ref, isVisible } = useScrollAnimation();
   const [searchTerm, setSearchTerm] = useState("");
 
   const segments = [
@@ -126,10 +124,7 @@ const Evolution = () => {
           filteredSegments.map((segment) => (
             <div
               key={segment.name}
-              ref={ref}
-              className={`mb-16 transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
+              className="mb-16"
             >
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-center">
                 <span className="text-primary">{segment.name}</span>

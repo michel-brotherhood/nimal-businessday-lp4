@@ -24,13 +24,13 @@ const Evolution = () => {
         {
           clientName: "MODEC",
           logo: modecLogo,
-          equipment: "SC9 - Zebra e Bartec",
+          equipment: "SC9 - Bartec",
           equipmentImage: sc9Equipment,
         },
         {
           clientName: "Coca-Cola Andina",
           logo: cocaColaAndinaLogo,
-          equipment: "TC83 - Zebra",
+          equipment: "TC83",
           equipmentImage: tc83Equipment,
         },
       ],
@@ -41,13 +41,13 @@ const Evolution = () => {
         {
           clientName: "Mundial",
           logo: mundialLogo,
-          equipment: "MC93 - Zebra",
+          equipment: "MC93",
           equipmentImage: mc93Equipment,
         },
         {
           clientName: "Dufry",
           logo: dufryLogo,
-          equipment: "MC33 - Zebra",
+          equipment: "MC33",
           equipmentImage: mc33Equipment,
         },
       ],
@@ -58,13 +58,13 @@ const Evolution = () => {
         {
           clientName: "Águas do Rio",
           logo: aguasDoRioLogo,
-          equipment: "ZQ521 - Zebra",
+          equipment: "ZQ521",
           equipmentImage: zq521Equipment,
         },
         {
           clientName: "Vibra",
           logo: vibraLogo,
-          equipment: "ZQ521 - Zebra",
+          equipment: "ZQ521",
           equipmentImage: zq521Equipment,
         },
       ],
@@ -152,7 +152,7 @@ const Evolution = () => {
 
                       {/* Informações do Equipamento */}
                       <div className="flex-1 text-center lg:text-left">
-                        <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
+                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-2">
                           {caseItem.equipment}
                         </h3>
                       </div>

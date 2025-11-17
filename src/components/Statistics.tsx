@@ -55,7 +55,7 @@ const Counter = ({ end, duration, suffix, label }: CounterProps) => {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-5xl md:text-6xl font-bold text-accent mb-2">
+      <div className="text-5xl md:text-6xl font-bold text-primary mb-2">
         {count}{suffix}
       </div>
       <div className="text-lg text-muted-foreground">{label}</div>
@@ -74,7 +74,7 @@ const Statistics = () => {
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
-        <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-8 md:p-12">
+        <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl p-8 md:p-12 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,59,59,0.3)] transition-all duration-300">
           <h3 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             Números que Comprovam a Evolução
           </h3>

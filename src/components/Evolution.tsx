@@ -146,17 +146,17 @@ const Evolution = () => {
                   >
                     <div className="flex flex-col lg:flex-row gap-8 items-center">
                       {/* Logo do Cliente */}
-                      <div className="flex-shrink-0 flex items-center justify-center w-32">
+                      <div className="flex-shrink-0 flex items-center justify-center w-48">
                         <img
                           src={caseItem.logo}
                           alt={`${caseItem.clientName} Logo`}
-                          className="w-auto h-20 sm:h-24 object-contain"
+                          className="w-auto h-32 sm:h-36 object-contain"
                         />
                       </div>
 
                       {/* Nome do Equipamento */}
-                      <div className="flex-1 text-center lg:text-left flex items-center">
-                        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-light text-primary">
+                      <div className="flex-1 text-center lg:text-left flex items-center justify-center lg:justify-start">
+                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-primary">
                           {caseItem.equipment}
                         </h3>
                       </div>

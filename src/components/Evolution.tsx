@@ -66,14 +66,9 @@ const Evolution = () => {
         {
           clientName: "Vibra",
           logo: vibraLogo,
-          equipment: "ZQ520",
-          equipmentImage: zq520Equipment,
-        },
-        {
-          clientName: "Vibra",
-          logo: vibraLogo,
-          equipment: "TC58",
-          equipmentImage: tc58Equipment,
+          equipment: ["ZQ520", "TC58"],
+          equipmentImage: [zq520Equipment, tc58Equipment],
+          isMultiple: true,
         },
       ],
     },
@@ -85,9 +80,12 @@ const Evolution = () => {
       cases: segment.cases.filter((caseItem) => {
         if (!searchTerm) return true;
         const searchLower = searchTerm.toLowerCase();
+        const equipmentSearch = Array.isArray(caseItem.equipment)
+          ? caseItem.equipment.some((eq) => eq.toLowerCase().includes(searchLower))
+          : caseItem.equipment.toLowerCase().includes(searchLower);
         return (
           caseItem.clientName.toLowerCase().includes(searchLower) ||
-          caseItem.equipment.toLowerCase().includes(searchLower)
+          equipmentSearch
         );
       }),
     }))
@@ -142,38 +140,73 @@ const Evolution = () => {
                 {segment.cases.map((caseItem, index) => (
                   <div
                     key={index}
-                    className="bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300"
+                    className={`bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 ${
+                      caseItem.isMultiple ? "lg:col-span-2" : ""
+                    }`}
                   >
-                    <div className="flex flex-col lg:flex-row gap-8 items-center">
-                      {/* Logo do Cliente */}
-                      <div className="flex-shrink-0 flex items-center justify-center w-48">
-                        <img
-                          src={caseItem.logo}
-                          alt={`${caseItem.clientName} Logo`}
-                          className="w-auto h-32 sm:h-36 object-contain"
-                        />
-                      </div>
+                    {caseItem.isMultiple ? (
+                      <div className="flex flex-col lg:flex-row gap-8 items-center">
+                        {/* Logo do Cliente */}
+                        <div className="flex-shrink-0 flex items-center justify-center w-48">
+                          <img
+                            src={caseItem.logo}
+                            alt={`${caseItem.clientName} Logo`}
+                            className="w-auto h-32 sm:h-36 object-contain"
+                          />
+                        </div>
 
-                      {/* Nome do Equipamento */}
-                      <div className="flex-1 text-center lg:text-left flex items-center justify-center lg:justify-start">
-                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-primary">
-                          {caseItem.equipment}
-                        </h3>
+                        {/* Múltiplos Equipamentos */}
+                        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                          {Array.isArray(caseItem.equipment) && caseItem.equipment.map((equipment: string, idx: number) => (
+                            <div key={idx} className="flex flex-col items-center gap-4">
+                              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-primary text-center">
+                                {equipment}
+                              </h3>
+                              <img
+                                src={Array.isArray(caseItem.equipmentImage) ? caseItem.equipmentImage[idx] : caseItem.equipmentImage}
+                                alt={equipment}
+                                className={`w-full h-auto object-contain rounded-lg ${
+                                  equipment === "TC58" 
+                                    ? "max-w-[180px]" 
+                                    : "max-w-[250px]"
+                                }`}
+                              />
+                            </div>
+                          ))}
+                        </div>
                       </div>
+                    ) : (
+                      <div className="flex flex-col lg:flex-row gap-8 items-center">
+                        {/* Logo do Cliente */}
+                        <div className="flex-shrink-0 flex items-center justify-center w-48">
+                          <img
+                            src={caseItem.logo}
+                            alt={`${caseItem.clientName} Logo`}
+                            className="w-auto h-32 sm:h-36 object-contain"
+                          />
+                        </div>
 
-                      {/* Foto do Equipamento */}
-                      <div className="flex-shrink-0">
-                        <img
-                          src={caseItem.equipmentImage}
-                          alt={caseItem.equipment}
-                          className={`w-full h-auto object-contain rounded-lg ${
-                            caseItem.equipment === "TC58" 
-                              ? "max-w-[180px]" 
-                              : "max-w-[250px]"
-                          }`}
-                        />
+                        {/* Nome do Equipamento */}
+                        <div className="flex-1 text-center lg:text-left flex items-center justify-center lg:justify-start">
+                          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-primary">
+                            {typeof caseItem.equipment === 'string' ? caseItem.equipment : caseItem.equipment[0]}
+                          </h3>
+                        </div>
+
+                        {/* Foto do Equipamento */}
+                        <div className="flex-shrink-0">
+                          <img
+                            src={typeof caseItem.equipmentImage === 'string' ? caseItem.equipmentImage : caseItem.equipmentImage[0]}
+                            alt={typeof caseItem.equipment === 'string' ? caseItem.equipment : caseItem.equipment[0]}
+                            className={`w-full h-auto object-contain rounded-lg ${
+                              (typeof caseItem.equipment === 'string' ? caseItem.equipment : caseItem.equipment[0]) === "TC58" 
+                                ? "max-w-[180px]" 
+                                : "max-w-[250px]"
+                            }`}
+                          />
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                 ))}
               </div>

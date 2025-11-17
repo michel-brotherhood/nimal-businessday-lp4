@@ -9,7 +9,7 @@ import dufryLogo from "@/assets/dufry-logo.png";
 import mc33Equipment from "@/assets/mc33-zebra.webp";
 import aguasDoRioLogo from "@/assets/aguas-do-rio-new.png";
 import zq521Equipment from "@/assets/zq521-zebra.webp";
-import vibraLogo from "@/assets/vibra-logo.png";
+import vibraLogo from "@/assets/vibra-new.png";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
@@ -138,13 +138,13 @@ const Evolution = () => {
                   >
                     <div className="flex flex-col lg:flex-row gap-8 items-center">
                       {/* Logo do Cliente */}
-                      <div className="flex-shrink-0">
+                      <div className="flex-shrink-0 flex items-center justify-center">
                         <img
                           src={caseItem.logo}
                           alt={`${caseItem.clientName} Logo`}
                           className={`w-auto object-contain ${
                             caseItem.clientName === "Águas do Rio" 
-                              ? "h-24 sm:h-28" 
+                              ? "h-16 sm:h-20" 
                               : "h-16 sm:h-20"
                           }`}
                         />

@@ -136,16 +136,16 @@ const Evolution = () => {
                 <span className="text-primary">{segment.name}</span>
               </h2>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
                 {segment.cases.map((caseItem, index) => (
                   <div
                     key={index}
-                    className={`bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 ${
+                    className={`bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 flex flex-col ${
                       caseItem.isMultiple ? "lg:col-span-2" : ""
                     }`}
                   >
                     {caseItem.isMultiple ? (
-                      <div className="flex flex-col lg:flex-row gap-8 items-center">
+                      <div className="flex flex-col lg:flex-row gap-8 items-center h-full">
                         {/* Logo do Cliente */}
                         <div className="flex-shrink-0 flex items-center justify-center w-48">
                           <img
@@ -159,9 +159,11 @@ const Evolution = () => {
                         <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8">
                           {Array.isArray(caseItem.equipment) && caseItem.equipment.map((equipment: string, idx: number) => (
                             <div key={idx} className="flex flex-col items-center gap-4">
-                              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-primary text-center">
+                              {/* Nome do Equipamento - Desktop */}
+                              <h3 className="hidden lg:block text-3xl sm:text-4xl lg:text-5xl font-light text-primary text-center">
                                 {equipment}
                               </h3>
+                              {/* Imagem do Equipamento */}
                               <img
                                 src={Array.isArray(caseItem.equipmentImage) ? caseItem.equipmentImage[idx] : caseItem.equipmentImage}
                                 alt={equipment}
@@ -171,12 +173,17 @@ const Evolution = () => {
                                     : "max-w-[250px]"
                                 }`}
                               />
+                              {/* Nome do Equipamento - Mobile com efeito */}
+                              <h3 className="lg:hidden text-2xl font-bold text-primary text-center relative">
+                                <span className="relative z-10">{equipment}</span>
+                                <span className="absolute inset-0 blur-md bg-primary/20 scale-110"></span>
+                              </h3>
                             </div>
                           ))}
                         </div>
                       </div>
                     ) : (
-                      <div className="flex flex-col lg:flex-row gap-8 items-center">
+                      <div className="flex flex-col lg:flex-row gap-8 items-center h-full">
                         {/* Logo do Cliente */}
                         <div className="flex-shrink-0 flex items-center justify-center w-48">
                           <img
@@ -186,15 +193,15 @@ const Evolution = () => {
                           />
                         </div>
 
-                        {/* Nome do Equipamento */}
-                        <div className="flex-1 text-center lg:text-left flex items-center justify-center lg:justify-start">
+                        {/* Nome do Equipamento - Desktop */}
+                        <div className="hidden lg:flex flex-1 text-center lg:text-left items-center justify-center lg:justify-start">
                           <h3 className="text-3xl sm:text-4xl lg:text-5xl font-light text-primary">
                             {typeof caseItem.equipment === 'string' ? caseItem.equipment : caseItem.equipment[0]}
                           </h3>
                         </div>
 
                         {/* Foto do Equipamento */}
-                        <div className="flex-shrink-0">
+                        <div className="flex-shrink-0 flex flex-col items-center gap-4">
                           <img
                             src={typeof caseItem.equipmentImage === 'string' ? caseItem.equipmentImage : caseItem.equipmentImage[0]}
                             alt={typeof caseItem.equipment === 'string' ? caseItem.equipment : caseItem.equipment[0]}
@@ -204,6 +211,13 @@ const Evolution = () => {
                                 : "max-w-[250px]"
                             }`}
                           />
+                          {/* Nome do Equipamento - Mobile com efeito */}
+                          <h3 className="lg:hidden text-2xl font-bold text-primary text-center relative">
+                            <span className="relative z-10">
+                              {typeof caseItem.equipment === 'string' ? caseItem.equipment : caseItem.equipment[0]}
+                            </span>
+                            <span className="absolute inset-0 blur-md bg-primary/20 scale-110"></span>
+                          </h3>
                         </div>
                       </div>
                     )}

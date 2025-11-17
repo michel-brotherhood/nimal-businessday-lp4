@@ -9,6 +9,8 @@ import dufryLogo from "@/assets/dufry-logo.png";
 import mc33Equipment from "@/assets/mc33-zebra.webp";
 import aguasDoRioLogo from "@/assets/aguas-do-rio-new.png";
 import zq521Equipment from "@/assets/zq521-zebra.webp";
+import zq520Equipment from "@/assets/zq520-zebra.webp";
+import tc58Equipment from "@/assets/tc58-zebra.webp";
 import vibraLogo from "@/assets/vibra-new.png";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -64,8 +66,14 @@ const Evolution = () => {
         {
           clientName: "Vibra",
           logo: vibraLogo,
-          equipment: "ZQ521",
-          equipmentImage: zq521Equipment,
+          equipment: "ZQ520",
+          equipmentImage: zq520Equipment,
+        },
+        {
+          clientName: "Vibra",
+          logo: vibraLogo,
+          equipment: "TC58",
+          equipmentImage: tc58Equipment,
         },
       ],
     },

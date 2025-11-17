@@ -9,7 +9,7 @@ const Evolution = () => {
   const { ref: tableRef, isVisible: tableVisible } = useScrollAnimation();
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 relative z-10">
+    <section className="py-8 sm:py-12 lg:py-16 px-4 relative z-10">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div 
@@ -52,72 +52,72 @@ const Evolution = () => {
         <div 
           ref={tableRef}
           className={`mb-12 sm:mb-16 overflow-x-auto transition-all duration-1000 delay-400 ${
-            tableVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            tableVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'
           }`}
         >
           <div className="bg-card/80 backdrop-blur-md border border-border rounded-xl overflow-hidden min-w-[800px]">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="text-left p-6 text-foreground font-bold">Característica</th>
-                  <th className="text-left p-6 text-foreground font-bold">
-                    <div className="flex items-center gap-4">
-                      <img src={mc33Image} alt="MC33" className="h-20 w-auto object-contain" />
+                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">Característica</th>
+                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">
+                    <div className="flex items-center gap-2 sm:gap-4">
+                      <img src={mc33Image} alt="MC33" className="h-16 sm:h-20 w-auto object-contain" />
                       <span>MC33</span>
                     </div>
                   </th>
-                  <th className="text-left p-6 text-foreground font-bold">
-                    <div className="flex items-center gap-4">
-                      <img src={mc34Image} alt="MC34" className="h-20 w-auto object-contain" />
+                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">
+                    <div className="flex items-center gap-2 sm:gap-4">
+                      <img src={mc34Image} alt="MC34" className="h-16 sm:h-20 w-auto object-contain" />
                       <span>MC34</span>
                     </div>
                   </th>
-                  <th className="text-left p-6 text-foreground font-bold">Vantagem Estratégica</th>
+                  <th className="text-left p-4 sm:p-6 text-foreground font-bold text-sm sm:text-base">Vantagem Estratégica</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-border hover:bg-muted/50 transition-colors">
-                  <td className="p-6 font-semibold text-foreground">Sistema Operacional</td>
-                  <td className="p-6 text-muted-foreground">Android 8.1 (ou similar)</td>
-                  <td className="p-6 text-accent font-semibold">Android 13 com suíte Zebra DNA</td>
-                  <td className="p-6 text-muted-foreground">
+                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Sistema Operacional</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Android 8.1 (ou similar)</td>
+                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">Android 13 com suíte Zebra DNA</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
                     <strong className="text-foreground">Segurança e Longevidade:</strong> Suporte estendido, 
                     patches de segurança atualizados e acesso a aplicativos modernos e mais pesados.
                   </td>
                 </tr>
-                <tr className="border-b border-border hover:bg-muted/50 transition-colors">
-                  <td className="p-6 font-semibold text-foreground">Conectividade</td>
-                  <td className="p-6 text-muted-foreground">Wi-Fi (padrões antigos)</td>
-                  <td className="p-6 text-accent font-semibold">Wi-Fi 6E, Bluetooth 5.3, 5G/WWAN (opcional)</td>
-                  <td className="p-6 text-muted-foreground">
+                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Conectividade</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Wi-Fi (padrões antigos)</td>
+                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">Wi-Fi 6E, Bluetooth 5.3, 5G/WWAN (opcional)</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
                     <strong className="text-foreground">Operação Ininterrupta:</strong> Conexão ultrarrápida 
                     e estável, eliminando falhas de rede e acelerando a transmissão de dados.
                   </td>
                 </tr>
-                <tr className="border-b border-border hover:bg-muted/50 transition-colors">
-                  <td className="p-6 font-semibold text-foreground">Robustez e Vedação</td>
-                  <td className="p-6 text-muted-foreground">IP54, quedas de até 1,5 m (≈ 5 ft)</td>
-                  <td className="p-6 text-accent font-semibold">IP65/IP67, quedas de até 2,4 m (≈ 8 ft)</td>
-                  <td className="p-6 text-muted-foreground">
+                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Robustez e Vedação</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">IP54, quedas de até 1,5 m (≈ 5 ft)</td>
+                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">IP65/IP67, quedas de até 2,4 m (≈ 8 ft)</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
                     <strong className="text-foreground">Máximo Uptime:</strong> Resistência superior a poeira, 
                     jatos d'água, submersão e impactos, reduzindo drasticamente os custos com manutenção e o 
                     tempo de inatividade.
                   </td>
                 </tr>
-                <tr className="border-b border-border hover:bg-muted/50 transition-colors">
-                  <td className="p-6 font-semibold text-foreground">Bateria e Gerenciamento</td>
-                  <td className="p-6 text-muted-foreground">Bateria padrão</td>
-                  <td className="p-6 text-accent font-semibold">7000 mAh com hot-swap e BLE beacon</td>
-                  <td className="p-6 text-muted-foreground">
+                <tr className="border-b border-border hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Bateria e Gerenciamento</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Bateria padrão</td>
+                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">7000 mAh com hot-swap e BLE beacon</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
                     <strong className="text-foreground">Autonomia e Rastreabilidade:</strong> Turnos completos 
                     sem interrupção para recarga e localização fácil de ativos, otimizando o uso e prevenindo perdas.
                   </td>
                 </tr>
-                <tr className="hover:bg-muted/50 transition-colors">
-                  <td className="p-6 font-semibold text-foreground">Performance de Leitura</td>
-                  <td className="p-6 text-muted-foreground">Padrão</td>
-                  <td className="p-6 text-accent font-semibold">Leitura de longo alcance</td>
-                  <td className="p-6 text-muted-foreground">
+                <tr className="hover:bg-muted/50 transition-all duration-300 hover:translate-x-2">
+                  <td className="p-4 sm:p-6 font-semibold text-foreground text-sm sm:text-base">Performance de Leitura</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">Padrão</td>
+                  <td className="p-4 sm:p-6 text-accent font-semibold text-sm sm:text-base">Leitura de longo alcance</td>
+                  <td className="p-4 sm:p-6 text-muted-foreground text-sm sm:text-base">
                     <strong className="text-foreground">Eficiência Ampliada:</strong> Captura de códigos de 
                     barras a curtas e longas distâncias, ideal para armazéns altos e pátios (yards), minimizando 
                     movimentação e fadiga do operador.

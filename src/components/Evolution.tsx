@@ -15,6 +15,7 @@ import vibraLogo from "@/assets/vibra-new.png";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Search, X } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Evolution = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -137,13 +138,22 @@ const Evolution = () => {
               </h2>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-                {segment.cases.map((caseItem, index) => (
-                  <div
-                    key={index}
-                    className={`bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300 flex flex-col ${
-                      caseItem.isMultiple ? "lg:col-span-2" : ""
-                    }`}
-                  >
+                {segment.cases.map((caseItem, index) => {
+                  const { ref, isVisible } = useScrollAnimation(0.1);
+                  
+                  return (
+                    <div
+                      key={index}
+                      ref={ref}
+                      className={`bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-500 flex flex-col ${
+                        caseItem.isMultiple ? "lg:col-span-2" : ""
+                      } ${
+                        isVisible 
+                          ? "opacity-100 translate-y-0" 
+                          : "opacity-0 translate-y-8"
+                      }`}
+                      style={{ transitionDelay: `${index * 100}ms` }}
+                    >
                     {caseItem.isMultiple ? (
                       <div className="flex flex-col lg:flex-row gap-8 items-center h-full">
                         {/* Logo do Cliente */}
@@ -222,7 +232,8 @@ const Evolution = () => {
                       </div>
                     )}
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))

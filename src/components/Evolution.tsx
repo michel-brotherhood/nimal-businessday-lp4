@@ -5,6 +5,8 @@ import cocaColaAndinaLogo from "@/assets/coca-cola-andina-logo.webp";
 import tc83Equipment from "@/assets/tc83-zebra.png";
 import mundialLogo from "@/assets/mundial-logo.png";
 import mc93Equipment from "@/assets/mc93-zebra.webp";
+import dufryLogo from "@/assets/dufry-logo.png";
+import mc33Equipment from "@/assets/mc33-zebra.webp";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -41,6 +43,12 @@ const Evolution = () => {
           logo: mundialLogo,
           equipment: "MC93 - Zebra",
           equipmentImage: mc93Equipment,
+        },
+        {
+          clientName: "Dufry",
+          logo: dufryLogo,
+          equipment: "MC33 - Zebra",
+          equipmentImage: mc33Equipment,
         },
       ],
     },

@@ -144,9 +144,9 @@ const Evolution = () => {
                     key={index}
                     className="bg-card/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-border/50 hover:border-primary/50 transition-all duration-300"
                   >
-                    <div className="flex flex-col items-center text-center space-y-6">
+                    <div className="flex flex-col lg:flex-row gap-8 items-center">
                       {/* Logo do Cliente */}
-                      <div className="flex items-center justify-center">
+                      <div className="flex-shrink-0 flex items-center justify-center w-32">
                         <img
                           src={caseItem.logo}
                           alt={`${caseItem.clientName} Logo`}
@@ -154,24 +154,24 @@ const Evolution = () => {
                         />
                       </div>
 
+                      {/* Nome do Equipamento */}
+                      <div className="flex-1 text-center lg:text-left flex items-center">
+                        <h3 className="text-4xl sm:text-5xl lg:text-6xl font-light text-primary">
+                          {caseItem.equipment}
+                        </h3>
+                      </div>
+
                       {/* Foto do Equipamento */}
-                      <div className="flex items-center justify-center">
+                      <div className="flex-shrink-0">
                         <img
                           src={caseItem.equipmentImage}
                           alt={caseItem.equipment}
                           className={`w-full h-auto object-contain rounded-lg ${
                             caseItem.equipment === "TC58" 
-                              ? "max-w-[200px]" 
-                              : "max-w-[280px]"
+                              ? "max-w-[180px]" 
+                              : "max-w-[250px]"
                           }`}
                         />
-                      </div>
-
-                      {/* Nome do Equipamento */}
-                      <div>
-                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light text-primary">
-                          {caseItem.equipment}
-                        </h3>
                       </div>
                     </div>
                   </div>

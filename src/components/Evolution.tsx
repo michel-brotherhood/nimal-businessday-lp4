@@ -152,8 +152,8 @@ const Evolution = () => {
                           alt={`${caseItem.clientName} Logo`}
                           className={`w-auto object-contain ${
                             caseItem.clientName === "Águas do Rio" 
-                              ? "h-16 sm:h-20" 
-                              : "h-16 sm:h-20"
+                              ? "h-20 sm:h-24" 
+                              : "h-20 sm:h-24"
                           }`}
                         />
                       </div>

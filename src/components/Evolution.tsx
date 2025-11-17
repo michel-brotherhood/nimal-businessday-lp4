@@ -7,7 +7,7 @@ import mundialLogo from "@/assets/mundial-logo.png";
 import mc93Equipment from "@/assets/mc93-zebra.webp";
 import dufryLogo from "@/assets/dufry-logo.png";
 import mc33Equipment from "@/assets/mc33-zebra.webp";
-import aguasDoRioLogo from "@/assets/aguas-do-rio-logo.webp";
+import aguasDoRioLogo from "@/assets/aguas-do-rio-new.png";
 import zq521Equipment from "@/assets/zq521-zebra.webp";
 import vibraLogo from "@/assets/vibra-logo.png";
 import { Input } from "@/components/ui/input";

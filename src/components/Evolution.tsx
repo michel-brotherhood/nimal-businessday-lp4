@@ -138,7 +138,7 @@ const Evolution = () => {
                 <span className="text-primary">{segment.name}</span>
               </h2>
 
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {segment.cases.map((caseItem, index) => (
                   <div
                     key={index}
